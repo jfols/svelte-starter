@@ -27,9 +27,20 @@
 
   const decrementTrack = () => {
     currentTrack = currentTrack === 0 ? tracks.length - 1 : currentTrack - 1;
+    try {
+      gtag("event", "back");
+    } catch (error) {
+      console.log("gtag not defined.");
+    }
   };
+
   const incrementTrack = () => {
     currentTrack = (currentTrack + 1) % tracks.length;
+    try {
+      gtag("event", "next");
+    } catch (error) {
+      console.warn("gtag not defined.");
+    }
   };
 </script>
 
