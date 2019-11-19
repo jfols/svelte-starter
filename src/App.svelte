@@ -33,6 +33,7 @@
   const routes = {
     "/": Home,
     "/in": In,
+    "/in/*": In,
     // named parameters, with last being optional
     // '/author/:first/:last?': Author,
 

@@ -1,6 +1,7 @@
 <script>
   import Button from "../components/Button.svelte";
   import Logo from "../components/Logo.svelte";
+  import { push, pop } from "svelte-spa-router";
 
   let currentTrack = 0;
   let tracks = [
@@ -27,6 +28,7 @@
 
   const decrementTrack = () => {
     currentTrack = currentTrack === 0 ? tracks.length - 1 : currentTrack - 1;
+    pop();
     try {
       gtag("event", "back");
     } catch (error) {
@@ -36,6 +38,7 @@
 
   const incrementTrack = () => {
     currentTrack = (currentTrack + 1) % tracks.length;
+    push("/in/" + (currentTrack + 1));
     try {
       gtag("event", "next");
     } catch (error) {
