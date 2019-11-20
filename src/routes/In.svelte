@@ -49,12 +49,12 @@
 
 <div
   class="text-center mt-4 z-50 text-gray-100 text-sm sm:text-base px-3 mt-12
-  mb-4">
+  mb-8">
   {tracks[currentTrack].tagline} ({currentTrack + 1}/{tracks.length})
 </div>
 <iframe
   class="w-full"
-  style="height: 22rem;"
+  style="height: 16rem;"
   title="exclusive"
   scrolling="no"
   frameborder="no"
@@ -62,7 +62,7 @@
   allowfullscreen
   src={tracks[currentTrack].src} />
 
-<div class="flex justify-center mt-4 mb-4">
+<div class="flex justify-end my-8">
   {#if currentTrack != 0}
     <div class="px-4">
       <Button handleClick={decrementTrack}>Back</Button>
