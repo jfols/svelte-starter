@@ -78,11 +78,11 @@
 {/if}
 
 {#if tracks[currentTrack].href}
-  <a
-    class="text-green-400 text-xl text-center"
-    href={tracks[currentTrack].href}>
-    {tracks[currentTrack].href}
-  </a>
+  <div class="text-center my-8">
+    <a class="text-green-400 text-xl" href={tracks[currentTrack].href}>
+      {tracks[currentTrack].href}
+    </a>
+  </div>
 {/if}
 <div class="flex justify-end my-8">
   {#if currentTrack != 0}
