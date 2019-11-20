@@ -8,9 +8,8 @@
     <br />
     Website
     <br />
-    <!-- <div class="text-2xl">Over 2,000,000 exlusive moments served.</div> -->
   </a>
 
 </div>
 
-<div class="text-gray-500">Over 2,000,000 exlusive moments served.</div>
+<div class="text-gray-500">Over 2,840,000 exlusive moments served.</div>

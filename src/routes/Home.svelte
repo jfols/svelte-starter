@@ -10,7 +10,7 @@
   let hasEntered = false;
   let secondsWaited = 20;
   let secondsUntilIn = secondsWaited;
-  let messageDelay = 17;
+  let messageDelay = 19;
   let interval;
 
   onMount(() => {
@@ -27,23 +27,25 @@
 <Logo />
 
 {#if isAbleToEnter && !hasEntered}
-  <div class="text-center mt-12" transition:fly={{ y: -500, duration: 2000 }}>
+  <div class="text-center mt-12" transition:fly={{ y: -200, duration: 1000 }}>
     <Button
       handleClick={() => {
         hasEntered = true;
       }}>
-      Enter
+      enter
     </Button>
     <div class="text-base text-gray-300 mt-12">
-      Congratulations! You may now enter.
+      Congratulations! You waited {secondsWaited} seconds, now you're in!
     </div>
-    <div class="text-base text-green-500 mt-12">Caution: sounds will play.</div>
+    <div class="text-base text-green-400 mt-12">~ best with volume up ~</div>
   </div>
 {/if}
 
 {#if secondsUntilIn > 0}
-  <div class="text-center mt-6">
-    <span class="grad text-6xl">{secondsUntilIn}</span>
+  <div class="text-center mt-8">
+    <span class="vt text-teal-400" style="font-size: 10rem;">
+      {secondsUntilIn}
+    </span>
   </div>
   {#if secondsUntilIn < messageDelay}
     <div
@@ -56,7 +58,7 @@
 {/if}
 
 {#if isAbleToEnter && hasEntered}
-  <div transition:fade={{ duration: 4000, delay: 2001 }}>
+  <div transition:fade={{ duration: 3000, delay: 1001 }}>
     <In />
   </div>
 {/if}

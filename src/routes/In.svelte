@@ -7,7 +7,13 @@
   let tracks = [
     {
       src:
-        "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/709077898&color=%23805ad5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+        "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/656326487&color=%23805ad5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+      tagline:
+        "This song had 69 plays when we first posted it. Let's see what we can do about that."
+    },
+    {
+      src:
+        "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/693612751&color=%23805ad5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
       tagline: "This Beck is very nice."
     },
     {
@@ -23,6 +29,11 @@
     {
       src: "https://www.youtube.com/embed/N-QxeSz3A0E",
       tagline: "Fun with spam callers."
+    },
+    {
+      tagline:
+        "Visit again soon for more exclusive content and cool new features.",
+      href: "https://www.reddit.com/r/mostexclusiveposts/"
     }
   ];
 
@@ -49,25 +60,39 @@
 
 <div
   class="text-center mt-4 z-50 text-gray-100 text-sm sm:text-base px-3 mt-12
-  mb-8">
-  {tracks[currentTrack].tagline} ({currentTrack + 1}/{tracks.length})
+  mb-4">
+  {tracks[currentTrack].tagline}
 </div>
-<iframe
-  class="w-full"
-  style="height: 16rem;"
-  title="exclusive"
-  scrolling="no"
-  frameborder="no"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-  src={tracks[currentTrack].src} />
 
+{#if tracks[currentTrack].src}
+  <iframe
+    class="w-full"
+    style="height: 20rem;"
+    title="exclusive"
+    scrolling="no"
+    frameborder="no"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope;
+    picture-in-picture"
+    allowfullscreen
+    src={tracks[currentTrack].src} />
+{/if}
+
+{#if tracks[currentTrack].href}
+  <a
+    class="text-green-400 text-xl text-center"
+    href={tracks[currentTrack].href}>
+    {tracks[currentTrack].href}
+  </a>
+{/if}
 <div class="flex justify-end my-8">
   {#if currentTrack != 0}
     <div class="px-4">
       <Button handleClick={decrementTrack}>Back</Button>
     </div>
   {/if}
+  <div class="self-center text-gray-100 text-sm sm:text-base px-3">
+    ({currentTrack + 1}/{tracks.length})
+  </div>
   <div class="px-4">
     <Button handleClick={incrementTrack}>Next</Button>
   </div>
