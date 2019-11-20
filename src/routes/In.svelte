@@ -38,7 +38,7 @@
 
   const incrementTrack = () => {
     currentTrack = (currentTrack + 1) % tracks.length;
-    push("/in/" + (currentTrack + 1));
+    push("/" + (currentTrack + 1));
     try {
       gtag("event", "next");
     } catch (error) {
@@ -47,10 +47,9 @@
   };
 </script>
 
-<Logo />
-
 <div
-  class="text-center mt-4 z-50 text-gray-100 text-sm sm:text-base px-3 mt-4 mb-4">
+  class="text-center mt-4 z-50 text-gray-100 text-sm sm:text-base px-3 mt-12
+  mb-4">
   {tracks[currentTrack].tagline} ({currentTrack + 1}/{tracks.length})
 </div>
 <iframe
@@ -64,9 +63,11 @@
   src={tracks[currentTrack].src} />
 
 <div class="flex justify-center mt-4 mb-4">
-  <div class="px-4">
-    <Button handleClick={decrementTrack}>Back</Button>
-  </div>
+  {#if currentTrack != 0}
+    <div class="px-4">
+      <Button handleClick={decrementTrack}>Back</Button>
+    </div>
+  {/if}
   <div class="px-4">
     <Button handleClick={incrementTrack}>Next</Button>
   </div>
