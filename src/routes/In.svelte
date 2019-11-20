@@ -48,14 +48,7 @@
 </script>
 
 <Logo />
-<div class="flex justify-center mt-4 mb-4">
-  <div class="px-4">
-    <Button handleClick={decrementTrack}>Back</Button>
-  </div>
-  <div class="px-4">
-    <Button handleClick={incrementTrack}>Next</Button>
-  </div>
-</div>
+
 <div
   class="text-center mt-4 z-50 text-gray-100 text-sm sm:text-base px-3 mt-4 mb-4">
   {tracks[currentTrack].tagline} ({currentTrack + 1}/{tracks.length})
@@ -69,3 +62,12 @@
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
   src={tracks[currentTrack].src} />
+
+<div class="flex justify-center mt-4 mb-4">
+  <div class="px-4">
+    <Button handleClick={decrementTrack}>Back</Button>
+  </div>
+  <div class="px-4">
+    <Button handleClick={incrementTrack}>Next</Button>
+  </div>
+</div>

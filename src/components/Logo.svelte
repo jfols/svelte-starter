@@ -7,5 +7,7 @@
     Exclusive
     <br />
     Website
+    <br />
+    <div class="text-2xl">Over 2,000,000 exlusive moments served.</div>
   </a>
 </div>
