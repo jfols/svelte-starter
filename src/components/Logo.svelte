@@ -12,4 +12,4 @@
 
 </div>
 
-<div class="text-gray-500">Over 2,840,000 exlusive moments served.</div>
+<div class="text-gray-500">Over 3,000,000 exclusive moments served.</div>
