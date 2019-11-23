@@ -8,9 +8,9 @@
 
   let isAbleToEnter = false;
   let hasEntered = false;
-  let secondsWaited = 20;
+  let secondsWaited = 17;
   let secondsUntilIn = secondsWaited;
-  let messageDelay = 19;
+  let messageDelay = 55;
   let interval;
 
   onMount(() => {

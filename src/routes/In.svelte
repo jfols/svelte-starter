@@ -6,10 +6,14 @@
   let currentTrack = 0;
   let tracks = [
     {
+      src: "https://www.youtube.com/embed/pp3FAKUn63Y?autoplay=1",
+      tagline: "Sean is very talented at making the videos."
+    },
+    {
       src:
         "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/656326487&color=%23805ad5&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
       tagline:
-        "This song had 69 plays when we first posted it. Let's see what we can do about that."
+        "This song had 69 plays when we first posted it. Let's see what we can do about that. Hmmm, 1000+ plays per day, you're all doing good work."
     },
     {
       src:
@@ -27,7 +31,7 @@
       tagline: "Bad and goldddddddddd."
     },
     {
-      src: "https://www.youtube.com/embed/N-QxeSz3A0E",
+      src: "https://www.youtube.com/embed/N-QxeSz3A0E?autoplay=1",
       tagline: "Fun with spam callers."
     },
     {
