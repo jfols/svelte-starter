@@ -1,11 +1,13 @@
 import svelte from 'rollup-plugin-svelte';
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
+import buble from '@rollup/plugin-buble';
 import commonjs from 'rollup-plugin-commonjs';
 import postcssImport from 'postcss-import';
 import postcss from 'rollup-plugin-postcss';
 import cssnano from 'cssnano';
 import autoprefixer from 'autoprefixer';
 import livereload from 'rollup-plugin-livereload';
+
 import tailwind from 'tailwindcss';
 import purgecss from '@fullhuman/postcss-purgecss';
 import { terser } from 'rollup-plugin-terser';
@@ -63,6 +65,9 @@ export default {
         importee === 'svelte' || importee.startsWith('svelte/')
     }),
     commonjs(),
+    buble({
+      transforms: { forOf: false }
+    }),
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
