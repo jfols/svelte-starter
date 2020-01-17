@@ -1,20 +1,21 @@
-import svelte from 'rollup-plugin-svelte';
-import resolve from '@rollup/plugin-node-resolve';
-import buble from '@rollup/plugin-buble';
-import commonjs from 'rollup-plugin-commonjs';
-import postcssImport from 'postcss-import';
-import postcss from 'rollup-plugin-postcss';
-import cssnano from 'cssnano';
-import autoprefixer from 'autoprefixer';
-import livereload from 'rollup-plugin-livereload';
+import svelte from "rollup-plugin-svelte";
+import resolve from "@rollup/plugin-node-resolve";
+import buble from "@rollup/plugin-buble";
+import commonjs from "@rollup/plugin-commonjs";
+import postcssImport from "postcss-import";
+import postcss from "rollup-plugin-postcss";
+import cssnano from "cssnano";
+import autoprefixer from "autoprefixer";
+import serve from "rollup-plugin-serve";
+import livereload from "rollup-plugin-livereload";
 
-import tailwind from 'tailwindcss';
-import purgecss from '@fullhuman/postcss-purgecss';
-import { terser } from 'rollup-plugin-terser';
+import tailwind from "tailwindcss";
+import purgecss from "@fullhuman/postcss-purgecss";
+import { terser } from "rollup-plugin-terser";
 
 const removeUnusedCss = purgecss({
   // Specify the paths to all of the template files in your project
-  content: ['./public/**/*.html', './src/**/*.html', './src/**/*.svelte'],
+  content: ["./public/**/*.html", "./src/**/*.html", "./src/**/*.svelte"],
 
   // Include any special characters you're using in this regular expression
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
@@ -22,14 +23,15 @@ const removeUnusedCss = purgecss({
 
 const production = !process.env.ROLLUP_WATCH;
 
-console.log('is prod:', production);
+console.log("is prod:", production);
 export default {
-  input: 'src/main.js',
+  input: "src/main.js",
   output: {
     sourcemap: true,
-    format: 'iife',
-    name: 'app',
-    file: production ? 'dist/bundle.js' : 'public/bundle.js'
+    format: "iife",
+    name: "app",
+    compact: true,
+    file: production ? "dist/bundle.js" : "public/bundle.js"
   },
   plugins: [
     svelte({
@@ -39,7 +41,7 @@ export default {
       // we'll extract any component CSS out into
       // a separate file — better for performance
       css: css => {
-        css.write(production ? 'dist/bundle.css' : 'public/bundle.css');
+        css.write(production ? "dist/bundle.css" : "public/bundle.css");
       }
     }),
 
@@ -51,7 +53,7 @@ export default {
         production && removeUnusedCss,
         cssnano()
       ].filter(Boolean),
-      extract: production ? 'dist/bundle.css' : 'public/bundle.css'
+      extract: production ? "dist/bundle.css" : "public/bundle.css"
     }),
 
     // If you have external dependencies installed from
@@ -62,22 +64,20 @@ export default {
     resolve({
       browser: true,
       dedupe: importee =>
-        importee === 'svelte' || importee.startsWith('svelte/')
+        importee === "svelte" || importee.startsWith("svelte/")
     }),
     commonjs(),
     buble({
       transforms: { forOf: false }
     }),
 
-    // Watch the `public` directory and refresh the
-    // browser on changes when not in production
-    !production && livereload('public'),
-
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    production && terser()
+    production && terser(),
+    serve("public"),
+    livereload()
   ],
   watch: {
-    clearScreen: false
+    clearScreen: true
   }
 };
