@@ -3,8 +3,8 @@
   <div class="min-h-screen flex flex-wrap align-bottom">
     <div class="self-end">
       <div class="px-4 py-2">
-        <a href="https://twitter.com/waitingforweb" target="_blank">
-          #mostexclusive
+        <a href="https://twitter.com/yourTwitterHandle" target="_blank">
+          #someAwesomeHashtag
         </a>
       </div>
       <div class="px-4 py-2">
@@ -21,7 +21,7 @@
         </a>
       </div>
       <div class="px-4 py-2">
-        © 2015-2019
+        © {new Date().getFullYear()}
         <a href="https://www.modweb.io" target="_blank">modweb.io</a>
       </div>
     </div>

@@ -4,7 +4,6 @@
 
   import Footer from "./components/Footer.svelte";
   import Home from "./routes/Home.svelte";
-  import In from "./routes/In.svelte";
   import NotFound from "./routes/NotFound.svelte";
 
   import Nav from "./components/Nav.svelte";
@@ -21,7 +20,7 @@
   location.subscribe(value => {
     console.log("pageview: ", value, window.location);
     try {
-      gtag("config", "UA-59068287-2", {
+      gtag("config", "GA-YOUR-CODE-HERE", {
         page_location: window.location,
         page_path: value
       });
