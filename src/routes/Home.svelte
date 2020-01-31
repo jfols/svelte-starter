@@ -17,10 +17,10 @@
     }}>
     click me baby ({clicks})
   </Button>
-  <div class="text-base text-gray-300 mt-12">
+  <div class="text-base text-gray-900 mt-12">
     Just a little svelte action, nothing to here...
   </div>
-  <div class="text-base text-green-400 mt-12">
+  <div class="text-base text-gray-800 mt-12">
     edit src/routes/Home.svelte to see changes here
   </div>
 </div>

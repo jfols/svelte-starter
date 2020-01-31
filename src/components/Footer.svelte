@@ -22,7 +22,7 @@
       </div>
       <div class="px-4 py-2">
         © {new Date().getFullYear()}
-        <a href="https://www.modweb.io" target="_blank">modweb.io</a>
+        <a href="https://www.yoururl.com" target="_blank">yoururl.com</a>
       </div>
     </div>
 

@@ -43,16 +43,11 @@
   };
 </script>
 
-<div class="bg-gray min-h-screen subpixel-antialiased">
+<div class="bg-gray-100 min-h-screen subpixel-antialiased">
   <!-- <Nav /> -->
   <div class="flex justify-center">
     <div class="w-11/12 sm:w-4/5 md:w-3/5">
       <Router {routes} />
-    </div>
-  </div>
-  <div class="flex justify-center">
-    <div class="w-11/12 sm:w-4/5 md:w-3/5">
-      <Footer />
     </div>
   </div>
 </div>
