@@ -15,7 +15,7 @@
     handleClick={() => {
       clicks++;
     }}>
-    click me baby ({clicks})
+    click me ({clicks})
   </Button>
   <div class="text-base text-gray-900 mt-12">
     Just a little svelte action, nothing to here...
