@@ -1,5 +1,5 @@
 <script>
-  import "./main.css";
+  import "./tailwind.css";
   import { Route, router } from "tinro";
 
   import Footer from "./components/Footer.svelte";

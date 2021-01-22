@@ -36,16 +36,15 @@ export default {
   plugins: [
     svelte({
       // enable run-time checks when not in production
-      dev: !production,
+      // dev: !production,
       emitCss: true,
-      // we'll extract any component CSS out into
-      // a separate file — better for performance
-      css: css => {
-        css.write(production ? "dist/bundle.css" : "public/bundle.css");
-      }
+      // css: css => {
+      //   css.write(production ? "dist/bundle.css" : "public/bundle.css");
+      // }
     }),
 
     postcss({
+      from: "src/tailwind.css",
       plugins: [
         postcssImport,
         autoprefixer,
@@ -53,7 +52,7 @@ export default {
         production && removeUnusedCss,
         cssnano()
       ].filter(Boolean),
-      extract: production ? "dist/bundle.css" : "public/bundle.css"
+      extract: production ? "bundle.css" : "bundle.css"
     }),
 
     // If you have external dependencies installed from
@@ -74,7 +73,7 @@ export default {
     // If we're building for production (npm run build
     // instead of npm run dev), minify
     production && terser(),
-    serve({
+    !production && serve({
       contentBase: "public",
       port: 9000
     }),

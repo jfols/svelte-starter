@@ -1,0 +1,25 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* write custom css classes here, remember to always keep it atomic */
+.min-h-screen {
+  min-height: 100vh;
+}
+.bg-gray {
+  background-color: #080c11;
+}
+
+.grad {
+  background: linear-gradient(170deg, #3ad59f 20%, #f8ff00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bebas {
+  font-family: "Bebas Neue", cursive;
+}
+
+.vt {
+  font-family: "VT323", monospace;
+}
