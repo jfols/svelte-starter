@@ -1,3 +1,5 @@
+import path from 'path'
+
 import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
 import buble from "@rollup/plugin-buble";
@@ -52,7 +54,7 @@ export default {
         production && removeUnusedCss,
         cssnano()
       ].filter(Boolean),
-      extract: production ? "bundle.css" : "bundle.css"
+      extract: production ? path.resolve("dist/bundle.css") : path.resolve("public/bundle.css")
     }),
 
     // If you have external dependencies installed from
